@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levels — Start Here</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, sans-serif; max-width: 620px; padding: 48px 24px; margin: auto; }
+  h1 { font-size: 40px; letter-spacing: -1.5px; margin: 0; }
+  h2 { font-size: 21px; margin-top: 32px; }
+  li { margin: 12px 0; }
+  .intro { font-size: 20px; color: GrayText; margin-top: 4px; }
+  a { color: LinkText; }
+  aside { border-left: 3px solid LinkText; padding-left: 18px; }
+</style>
+<h1>Levels</h1>
+<p class="intro">Your apps. Your volume.</p>
+<p>Independent app volume for macOS 14.2 or later, on Apple Silicon and Intel. No audio driver or developer tools needed.</p>
+<h2>Install once</h2>
+<ol>
+  <li>Drag <strong>Levels.app</strong> onto <strong>Applications</strong> in this disk image. Eject the disk image.</li>
+  <li>Open <strong>Levels</strong> from Applications or Spotlight. Look for the sliders icon in your menu bar, or the island around your MacBook’s notch.</li>
+  <li>Click <strong>Enable App Volume</strong> and allow <strong>System Audio Recording</strong>. Click <strong>Check Again</strong> if prompted. If macOS asks you to quit and reopen, do that first.</li>
+  <li>Play audio in an app, then lower its slider. Other apps keep their own levels. Use the speaker button to mute.</li>
+</ol>
+<aside><strong>Audio stays on your Mac.</strong> Levels processes audio in memory to change volume. It never saves or uploads it. No microphone or Accessibility access is required.</aside>
+<h2>Make it yours</h2>
+<p>Open the mixer’s <strong>••• options → Display Mode</strong> to switch between <strong>Dynamic Island</strong> and <strong>Menu Bar Popover</strong>. Your choice, app volumes and mute states are remembered. Active apps appear first.</p>
+<p>The island expands when you click it or hover briefly beside the notch. The menu bar sliders icon also opens the mixer. Use Escape, an outside click or the close control to dismiss it.</p>
+<h2>If macOS blocks a test build</h2>
+<p>A file marked <strong>test</strong> has a local development signature and has not been notarized by Apple. After trying to open a copy you trust, go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong> and confirm. Follow <a href="https://support.apple.com/102445">Apple’s instructions</a>; keep the Mac’s security protections enabled.</p>
+<h2>If the app sliders stay disabled</h2>
+<p>Use <strong>••• options → Audio Privacy Settings</strong>. Enable Levels under <strong>Screen &amp; System Audio Recording</strong> (the name varies by macOS version), reopen Levels if required, then click <strong>Check Again</strong>. Existing installations may still show its former name, Sound Mixer.</p>
+<p>Some outputs have hardware volume controls; the system slider is hidden for those. If an app uses multiple outputs or a multichannel device, choose one mono or stereo output in that app, then retry.</p>
+<h2>Restore or remove</h2>
+<p><strong>Reset All</strong> restores every app to 100% and unmutes it. <strong>Pause App Mixing</strong> or <strong>Quit Levels</strong> restores normal audio while keeping your saved levels. To uninstall, quit Levels and move it from Applications to Trash. There are no drivers or background helpers to remove.</p>
+</html>

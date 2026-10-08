@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T03:29:44Z",
+  "title": "Design System: Levels",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Mint accent"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Black surface"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "White text"
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary gray"
+      },
+      "divider": {
+        "role": "neutral",
+        "displayName": "White divider"
+      },
+      "access-surface": {
+        "role": "neutral",
+        "displayName": "Access surface"
+      },
+      "search-surface": {
+        "role": "neutral",
+        "displayName": "Search surface"
+      },
+      "icon-pressed": {
+        "role": "neutral",
+        "displayName": "Pressed icon wash"
+      },
+      "popover-surface": {
+        "role": "neutral",
+        "displayName": "Charcoal popover surface"
+      }
+    },
+    "typographyMeta": {
+      "title": {
+        "displayName": "Title",
+        "purpose": "Levels header; native SwiftUI system font."
+      },
+      "app-name": {
+        "displayName": "App name",
+        "purpose": "Single-line application names and the empty-state headline."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Output selection and aligned percentage values; percentages use monospaced digits."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Apps section heading."
+      },
+      "detail": {
+        "displayName": "Detail",
+        "purpose": "Subtitle, app activity, errors, and footer."
+      },
+      "popover-title": {
+        "displayName": "Popover title",
+        "purpose": "Native compact popover header; 17pt system semibold."
+      }
+    },
+    "shadows": [
+      {
+        "name": "native-panel",
+        "value": "NSPanel.hasShadow = true",
+        "purpose": "AppKit owns the window shadow; source specifies no custom shadow geometry or color."
+      }
+    ],
+    "motion": [
+      {
+        "name": "pointer-dwell",
+        "value": "0.25s",
+        "purpose": "Delay before hover expansion in IslandController.hover."
+      },
+      {
+        "name": "panel-resize",
+        "value": "0.28s; CAMediaTimingFunction(name: .easeOut)",
+        "purpose": "Native panel frame animation; omitted when AppKit Reduce Motion is enabled."
+      },
+      {
+        "name": "body-transition",
+        "value": "0.2s; SwiftUI .easeOut; opacity combined with offset(y: -8pt)",
+        "purpose": "Mixer body insertion/removal; omitted when SwiftUI Reduce Motion is enabled."
+      }
+    ],
+    "nativePresentationModes": {
+      "selectionKey": "presentationMode",
+      "default": "dynamicIsland",
+      "dynamicIsland": {
+        "widthPoints": 430,
+        "surface": "#000000",
+        "source": "Sources/Levels/IslandController.swift"
+      },
+      "menuPopover": {
+        "widthPoints": 400,
+        "surface": "rgb(8.5% 8.5% 8.5%)",
+        "anchor": "Full NSStatusBarButton.bounds, preferredEdge .minY",
+        "nativeChrome": "NSPopover owns arrow and rounded corners",
+        "source": "Sources/Levels/PopoverController.swift"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Compact island",
+      "kind": "custom",
+      "refersTo": "compact-island",
+      "description": "Illustrative local 273 × 41pt example around the measured 185 × 33pt housing. One CSS pixel represents one native point; the count is example data and the inline symbol is a simplified preview of the native SF Symbol.",
+      "html": "<div class=\"ds-island\"><div class=\"ds-island-cap\"><button class=\"ds-island-toggle ds-island-mixer\" aria-label=\"Expand Levels\"><svg viewBox=\"0 0 18 18\" width=\"13\" height=\"13\" aria-hidden=\"true\"><path d=\"M2 4h14M2 9h14M2 14h14\" fill=\"none\" stroke=\"currentColor\"/><path d=\"M6 2v4M12 7v4M7 12v4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/></svg></button><span class=\"ds-island-gap\" aria-hidden=\"true\"></span><button class=\"ds-island-toggle ds-island-count\" aria-label=\"0 active apps. Expand mixer\"><span class=\"ds-island-dot\"></span><span>0</span></button></div></div>",
+      "css": ".ds-island { width:273px; height:41px; background:#000; border-radius:5px 5px 20.5px 20.5px; overflow:hidden; font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif; } .ds-island-cap { display:flex; height:33px; } .ds-island-toggle { width:44px; height:33px; border:0; padding:0; background:transparent; display:flex; align-items:center; justify-content:center; cursor:pointer; } .ds-island-gap { width:185px; flex:none; } .ds-island-mixer { color:rgb(50% 94% 77%); } .ds-island-count { color:#fff; gap:5px; font:500 11px -apple-system,BlinkMacSystemFont,system-ui,sans-serif; font-variant-numeric:tabular-nums; } .ds-island-dot { width:4px; height:4px; border-radius:50%; background:rgb(50% 94% 77%); }"
+    },
+    {
+      "name": "Icon button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Header collapse button with the source's pressed wash. Focus uses the preview browser's default outline; the shipped control uses SwiftUI accessibility and keyboard behavior.",
+      "html": "<button class=\"ds-icon-button\" aria-label=\"Collapse mixer\" title=\"Collapse to the notch · Escape\"><svg viewBox=\"0 0 16 16\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M3 10l5-5 5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-icon-button { width:28px; height:28px; border:0; border-radius:6px; padding:0; background:transparent; color:rgb(66% 66% 66%); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; } .ds-icon-button:active { background:rgb(100% 100% 100% / 14%); }"
+    },
+    {
+      "name": "App volume row",
+      "kind": "custom",
+      "refersTo": "app-row",
+      "description": "Illustrative row anatomy, using a fallback app icon and an example level. Native app icons, SF Symbols, and SwiftUI slider rendering remain authoritative; ID-keyed values survive activity-based reorder.",
+      "html": "<div class=\"ds-app-row\"><div class=\"ds-app-heading\"><svg class=\"ds-app-icon\" viewBox=\"0 0 28 28\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"24\" height=\"24\" rx=\"5\" fill=\"currentColor\"/><rect x=\"7\" y=\"7\" width=\"14\" height=\"14\" rx=\"2\" fill=\"#000\"/></svg><div><div class=\"ds-app-name\">App name</div><div class=\"ds-app-detail\">Audio active</div></div></div><div class=\"ds-app-controls\"><button class=\"ds-app-mute\" aria-label=\"Mute App name\"><svg viewBox=\"0 0 18 18\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M2 7h3l4-4v12l-4-4H2z\" fill=\"currentColor\"/><path d=\"M12 6c2 1 2 5 0 6M14 3c4 3 4 9 0 12\" fill=\"none\" stroke=\"currentColor\"/></svg></button><input class=\"ds-app-slider\" type=\"range\" min=\"0\" max=\"100\" value=\"100\" aria-label=\"App name volume\"/><span class=\"ds-app-level\">100%</span></div></div>",
+      "css": ".ds-app-row { width:386px; height:88px; padding:0 22px; background:#000; color:#fff; display:flex; flex-direction:column; justify-content:center; gap:8px; font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif; } .ds-app-heading,.ds-app-controls { display:flex; align-items:center; gap:10px; } .ds-app-icon { width:28px; height:28px; flex:none; color:rgb(66% 66% 66%); } .ds-app-name { font-size:13px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; } .ds-app-detail { font-size:11px; color:rgb(66% 66% 66%); margin-top:2px; } .ds-app-mute { width:28px; height:24px; padding:0; border:0; border-radius:6px; background:transparent; color:rgb(66% 66% 66%); display:flex; align-items:center; justify-content:center; cursor:pointer; } .ds-app-mute:active { background:rgb(100% 100% 100% / 14%); } .ds-app-slider { flex:1; min-width:0; margin:0; accent-color:rgb(50% 94% 77%); } .ds-app-level { width:40px; flex:none; text-align:right; font-size:12px; font-weight:500; font-variant-numeric:tabular-nums; }"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "Inset app search surface. Native SwiftUI TextField behavior is authoritative; the preview keeps browser-native text input and focus behavior.",
+      "html": "<label class=\"ds-search\"><svg viewBox=\"0 0 16 16\" width=\"12\" height=\"12\" aria-hidden=\"true\"><circle cx=\"6.5\" cy=\"6.5\" r=\"4.5\" fill=\"none\" stroke=\"currentColor\"/><path d=\"M10 10l4 4\" stroke=\"currentColor\"/></svg><input class=\"ds-search-input\" type=\"search\" placeholder=\"Find an app\" aria-label=\"Find an app\"/></label>",
+      "css": ".ds-search { width:368px; display:flex; align-items:center; gap:8px; padding:9px; border-radius:8px; background:rgb(10% 10% 10%); color:rgb(66% 66% 66%); font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif; } .ds-search-input { flex:1; min-width:0; border:0; padding:0; background:transparent; color:#fff; font:400 12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif; } .ds-search-input::placeholder { color:rgb(66% 66% 66%); }"
+    },
+    {
+      "name": "Access card",
+      "kind": "card",
+      "refersTo": "access-card",
+      "description": "Permission message surface with the source's heading, copy, padding, and radius. The button is a browser-native illustrative control; SwiftUI supplies the shipped small bordered-prominent appearance.",
+      "html": "<div class=\"ds-access-card\"><div class=\"ds-access-title\"><svg viewBox=\"0 0 16 16\" width=\"13\" height=\"13\" aria-hidden=\"true\"><path d=\"M1 6v4M4 3v10M7 1v14M10 4v8M13 6v4M15 5v6\" stroke=\"currentColor\" fill=\"none\"/></svg><span>Enable app volume control</span></div><p class=\"ds-access-copy\">Allow System Audio Recording to mix each app. Audio stays on your Mac and is never saved.</p><button class=\"ds-access-action\">Enable App Volume</button></div>",
+      "css": ".ds-access-card { width:358px; padding:14px; border-radius:12px; background:rgb(9% 9% 9%); color:#fff; font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif; } .ds-access-title { display:flex; align-items:center; gap:6px; font-size:13px; font-weight:600; } .ds-access-copy { margin:10px 0; color:rgb(66% 66% 66%); font-size:12px; } .ds-access-action { accent-color:rgb(50% 94% 77%); font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Dynamic Island style mixer",
+    "overview": "Levels uses a compact black island around the camera housing, expanding downward into native macOS audio controls. Its expression comes from the silhouette, restrained mint accents, clear app identities, and aligned levels. The confirmed direction is recorded in docs/ISLAND_DESIGN.md; platform and native-control commitments are in PRODUCT.md.\n\nThis document describes the implemented island and optional menu bar popover. SwiftUI and AppKit remain the rendering authority; the sidecar's HTML examples are illustrative translations, with one CSS pixel representing one macOS point. Window-level review covered compact, expanded, and many-app states. Full-display pixel positioning was not captured; reported NSScreen coordinates and geometry tests support placement logic only. Saved scroll captures intermittently omit layers, while the user confirmed labels and sliders remain visible on screen.\n\nThe saved Display Mode choice switches between the notch-aware island and a 400pt charcoal native popover. Both use the same audio model and retain current levels. The popover adds a header glyph, native close action, and mint activity labels.",
+    "keyCharacteristics": [
+      "Black island and charcoal popover with shared mint controls and status.",
+      "System SF typography, SF Symbols, and native menus and sliders.",
+      "A camera-housing cap above interactive mixer content.",
+      "Fixed surrounding sections and a bounded, scrollable app list."
+    ],
+    "rules": [
+      {
+        "name": "The App Identity Rule",
+        "body": "Playing apps precede idle apps, with localized alphabetical ordering within each group. Rows and saved levels use stable app IDs rather than list positions; owning bundle IDs are used where available. Reordering must retain each app's values.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Do derive the housing cap and gap from the current screen's reported geometry.",
+      "Do keep interactive mixer content beneath the cap and long app lists bounded.",
+      "Do place playing apps first, then idle apps, alphabetically within each group, while preserving identity and levels.",
+      "Do retain native control behavior, system typography, and monospaced percentage digits.",
+      "Do verify visible labels and sliders in the running app when saved scroll captures omit layers."
+    ],
+    "donts": [
+      "Don't turn the measured housing dimensions into universal constants.",
+      "Don't draw a manual popover arrow, put one on the island, or add simulated audio meters. NSPopover owns its arrow.",
+      "Don't replace system-managed menus, controls, or shadows with invented web styling.",
+      "Don't treat window captures or geometry tests as proof of full-display pixel alignment or untested hardware behavior."
+    ]
+  }
+}

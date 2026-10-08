@@ -2,7 +2,17 @@
 
 A native Mac audio mixer with a choice of Dynamic Island or menu bar popover for independent application volume and mute, similar to the Windows Volume Mixer. Built for macOS 14.2 or later using public Core Audio process taps. No third-party dependencies, audio driver, privileged helper, or network access.
 
+## Screenshots
+
+Both views share the same app volumes, mute controls, and active-first ordering. These are captures of the installed Levels app.
+
+| Menu Bar Popover | Dynamic Island (expanded) |
+| --- | --- |
+| <img src="docs/screenshots/levels-popover.jpg" alt="Levels menu bar popover showing output volume and per-app sliders, with Spotify playing audio above idle apps" width="400"> | <img src="docs/screenshots/levels-dynamic-island.jpg" alt="Levels expanded Dynamic Island showing output volume and per-app sliders, with Spotify playing audio above idle apps" width="400"> |
+
 ## Install the download
+
+Download the [universal test DMG](https://github.com/LeeSinLiang/Levels/releases/download/v0.1.0-test/Levels-0.1.0-universal-test.dmg) from the [v0.1.0-test release](https://github.com/LeeSinLiang/Levels/releases/tag/v0.1.0-test).
 
 Open `Levels-0.1.0-universal-test.dmg`, drag **Levels.app → Applications**, then eject the disk image and open **Levels** from Applications or Spotlight. The bundled **Start Here** guide covers installation, audio permission, both display modes, troubleshooting and uninstalling. It is also available from **••• options → Levels Setup Guide**.
 
